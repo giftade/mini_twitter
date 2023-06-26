@@ -1,0 +1,16 @@
+{
+  "name": "mini_twitter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./styles.css -o ./css/main.css",
+    "watch": "tailwindcss -i ./styles.css -o ./css/main.css --watch"
+  },
+  "keywords": [],
+  "author": "SheggzScript",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}

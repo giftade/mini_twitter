@@ -1,0 +1,19 @@
+# Ignore composer dependencies
+/vendor/
+
+# Ignore node modules
+/node_modules/
+
+# Ignore compiled CSS files
+/output.css
+
+# Ignore IDE-specific files and directories
+/.vscode/
+.idea/
+
+# Ignore system and hidden files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log

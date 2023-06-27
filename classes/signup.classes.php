@@ -2,6 +2,21 @@
 
 class Signup extends Dbh 
 {
+  protected function setUser($name, $email,$password)
+  {
+    $stmt = $this->connect()->prepare('INSERT INTO users (name, email, password) VALUES(?,?,?)');
+
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    if (!$stmt->execute(array($name, $email, $hashedPassword))) {
+      $stmt = null;
+      header('location: ../signup.php?error=stmtfailed');
+      exit();
+    }
+
+    $stmt = null;
+  }
+
   protected function checkUser($name, $email){
     $stmt = $this->connect()->prepare('SELECT name FROM users WHERE name = ? OR email = ?');
     
@@ -20,7 +35,5 @@ class Signup extends Dbh
     return $resultCheck;
   }
 
-  protected function setUser(){
-    return 'me';
-  }
+ 
 }

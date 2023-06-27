@@ -14,7 +14,7 @@ class SignupContr extends Signup
    
   }
 
-  private function signupUser(){
+  public function signupUser(){
     if($this->emptyInput() == false){
       header('location: ../signup.php?error=emptyInput');
       exit();
@@ -40,7 +40,7 @@ class SignupContr extends Signup
       exit();
     }
 
-    $this->setUser();
+    $this->setUser($this->username, $this->email, $this->password);
   }
 
   private function emptyInput(){

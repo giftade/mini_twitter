@@ -4,8 +4,9 @@
 # Ignore node modules
 /node_modules/
 
-#Ignore css file
+#Ignore css folder
 /css/
+/main.css
 # Ignore compiled CSS files
 /output.css
 

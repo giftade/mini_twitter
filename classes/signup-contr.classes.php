@@ -75,7 +75,7 @@ class SignupContr extends Signup
   }
 
   private function invalidPassword(){
-    $pattern = '/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/';
+    $pattern = '/^[a-zA-Z0-9]*$/';
     $result = '';
     if (!preg_match($pattern, $this->password)) {
       $result = false;

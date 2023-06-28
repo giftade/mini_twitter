@@ -4,7 +4,7 @@ class Signup extends Dbh
 {
   protected function setUser($name, $email,$password)
   {
-    $stmt = $this->connect()->prepare('INSERT INTO users (name, email, password) VALUES(?,?,?)');
+    $stmt = $this->connect()->prepare("INSERT INTO users (name, email, password) VALUES(?,?,?)");
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 

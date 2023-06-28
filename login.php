@@ -19,7 +19,7 @@
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="space-y-6" action="../mini_twitter/includes/signup.inc.php" method="POST">
+      <form class="space-y-6" action="../mini_twitter/includes/login.inc.php" method="POST">
 
         <div>
           <label for="username" class="block text-sm font-medium leading-6 text-white">Username or Email</label>

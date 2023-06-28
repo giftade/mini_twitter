@@ -4,6 +4,8 @@
 # Ignore node modules
 /node_modules/
 
+#Ignore css file
+/css/
 # Ignore compiled CSS files
 /output.css
 
@@ -17,5 +19,3 @@ Thumbs.db
 
 # Ignore log files
 *.log
-#Ignore css file
-/css/

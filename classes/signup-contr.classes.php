@@ -13,7 +13,7 @@ class SignupContr extends Signup
     $this->password = $password;
    
   }
-
+  //Runs all the methods for an error, if there's none, it signs up the user
   public function signupUser(){
     if($this->emptyInput() == false){
       header('location: ../signup.php?error=emptyInput');
@@ -42,7 +42,7 @@ class SignupContr extends Signup
 
     $this->setUser($this->username, $this->email, $this->password);
   }
-
+  //checks for empty input
   private function emptyInput(){
     $result = '';
     if(empty($this->username) || empty($this->email) || empty($this->password)){
@@ -52,7 +52,7 @@ class SignupContr extends Signup
     }
     return $result;
   }
-
+   //username validation
   private function invalidUsername(){
     $result = "";
     if(!preg_match("/^[a-zA-Z0-9]*$/", $this->username)){
@@ -62,7 +62,7 @@ class SignupContr extends Signup
     }
     return $result;
   }
-
+  //Email validation
   private function invalidEmail()
   {
     $result = "";
@@ -74,6 +74,7 @@ class SignupContr extends Signup
     return $result;
   }
 
+  //password validation
   private function invalidPassword(){
     $pattern = '/^[a-zA-Z0-9]*$/';
     $result = '';
@@ -84,7 +85,7 @@ class SignupContr extends Signup
   }
   return $result;
 }
-
+  //checks if username or email already exists
   private function userTaken()
   {
    $result = '';

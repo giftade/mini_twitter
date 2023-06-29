@@ -2,6 +2,7 @@
 
 class Signup extends Dbh 
 {
+  //Adds user to database
   protected function setUser($name, $email,$password)
   {
     $stmt = $this->connect()->prepare("INSERT INTO users (name, email, password) VALUES(?,?,?)");
@@ -16,7 +17,7 @@ class Signup extends Dbh
 
     $stmt = null;
   }
-
+    //Returns a user based on the email or username
   protected function checkUser($name, $email){
     $stmt = $this->connect()->prepare('SELECT name FROM users WHERE name = ? OR email = ?');
     

@@ -11,6 +11,7 @@ class LoginContr extends Login
     $this->password = $password;
   }
 
+  //login user
   public function loginUser() {
     if($this->emptyInput() == false){
       header('location: ../login.php?error=emptyInput');
@@ -20,7 +21,7 @@ class LoginContr extends Login
     $this->getUser($this->username, $this->password);
   }
 
-
+//check if input is empty
   private function emptyInput(){
     $result = '';
     if(empty($this->username) || empty($this->password)){

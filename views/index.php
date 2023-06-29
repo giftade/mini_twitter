@@ -29,6 +29,9 @@ if (!isset($_SESSION['username'])) {
       <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">Hey ' . $_SESSION["username"] . '</h2>
     </div>'
     ?>
+    <div>
+      <a href="logout.php" class="flex justify-center w-full rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" style="font-size: 20px; width:10%;">Log Out</a>
+    </div>
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form class="space-y-6 flex flex-col sm:flex-row" action="../mini_twitter/includes/login.inc.php" method="POST">
         <div class="flex-grow">
@@ -44,7 +47,7 @@ if (!isset($_SESSION['username'])) {
   </div>
   <div class="mt-10 sm:mx-auto text-white sm:w-full sm:max-w-sm border-2 border-grey-500 p-5">
     <div class="flex space-x-4">
-      <img src="btc.jpg" alt="Avatar" class="w-12 h-12 rounded-full">
+      <img src="images/btc.jpg" alt="Avatar" class="w-12 h-12 rounded-full">
       <div>
         <h4 class="font-bold">John Doe</h4>
         <p class="text-gray-600">@johndoe</p>

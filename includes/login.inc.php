@@ -12,4 +12,4 @@ $login = new LoginContr($username,$password);
 $login->loginUser();
 
 
-header('location: ../index.php?error=none');
+header('location: ../views/index.php?error=none');

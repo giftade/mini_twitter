@@ -12,7 +12,7 @@ $signup = new SignupContr($username, $email, $password);
 $signup->signupUser();
   
 
-header('location: ../login.php?error=none');
+header('location: ../views/login.php?error=none');
       
 
 

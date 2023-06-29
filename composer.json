@@ -1,0 +1,17 @@
+{
+    "name": "mini/twitter",
+    "autoload": {
+        "psr-4": {
+            "Mini\\Twitter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gift Segun Ade",
+            "email": "giftsegunade@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    }
+}

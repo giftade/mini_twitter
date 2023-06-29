@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if(!isset($_SESSION['username'])){
+if (!isset($_SESSION['username'])) {
   header('Location: login.php');
 }
 
@@ -15,7 +15,8 @@ if(!isset($_SESSION['username'])){
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css\main.css">
+  <link rel="stylesheet" href="../css/main.css">
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
@@ -40,20 +41,20 @@ if(!isset($_SESSION['username'])){
     </div>
 
 
-    </div>
-    <div class="mt-10 sm:mx-auto text-white sm:w-full sm:max-w-sm border-2 border-grey-500 p-5">
-      <div class="flex space-x-4">
-        <img src="btc.jpg" alt="Avatar" class="w-12 h-12 rounded-full">
-        <div>
-          <h4 class="font-bold">John Doe</h4>
-          <p class="text-gray-600">@johndoe</p>
-        </div>
+  </div>
+  <div class="mt-10 sm:mx-auto text-white sm:w-full sm:max-w-sm border-2 border-grey-500 p-5">
+    <div class="flex space-x-4">
+      <img src="btc.jpg" alt="Avatar" class="w-12 h-12 rounded-full">
+      <div>
+        <h4 class="font-bold">John Doe</h4>
+        <p class="text-gray-600">@johndoe</p>
       </div>
-      <div class="mt-4">
-        <p class="text-lg">This is an example tweet using Tailwind CSS!</p>
-      </div>
-      
     </div>
+    <div class="mt-4">
+      <p class="text-lg">This is an example tweet using Tailwind CSS!</p>
+    </div>
+
+  </div>
 
 </body>
 

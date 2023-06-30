@@ -1,5 +1,5 @@
 <?php
-include "../classes/dbh.classes.php";
+include_once "dbh.classes.php";
 class Tweets extends Dbh
 {
   protected function setTweet($tweetContent,$userId,$username,$timestamp){
@@ -13,13 +13,15 @@ class Tweets extends Dbh
   }
 
   protected function selectAllTweets(){
-    $stmt = $this->connect()->prepare("SELECT * FROM tweet");
+    $stmt = $this->connect()->prepare("SELECT * FROM tweet ORDER BY id DESC");
 
     if(!$stmt->execute()){
       $stmt = null;
       header('location: ../views/index.php?error=stmtfailed');
       exit();
     }
+    ;
+    return $stmt;
   }
 
 

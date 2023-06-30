@@ -8,7 +8,7 @@ class Login extends Dbh
       
     if(!$stmt->execute(array($name,$name))){
       $stmt = null;
-      header('location: ../login.php?error=stmtfailed');
+      header('location: ../views/login.php?error=stmtfailed');
       exit();
     }    
 
@@ -28,12 +28,12 @@ class Login extends Dbh
 
       }else {
         $stmt = null;
-        header('location: ../login.php?error=wrongpassword');
+        header('location: ../views/login.php?error=wrongpassword');
         exit();
       }
     } else {
       $stmt = null;
-      header('location: ../login.php?error=usernotfound');
+      header('location: ../views/login.php?error=usernotfound');
       exit();
     }
 

@@ -16,27 +16,27 @@ class SignupContr extends Signup
   //Runs all the methods for an error, if there's none, it signs up the user
   public function signupUser(){
     if($this->emptyInput() == false){
-      header('location: ../signup.php?error=emptyInput');
+      header('location: ../views/signup.php?error=emptyInput');
       exit();
     }
 
     if ($this->invalidUsername() == false) {
-      header('location: ../signup.php?error=invalidUsername');
+      header('location: ../views/signup.php?error=invalidUsername');
       exit();
     }
 
     if ($this->invalidPassword() == false) {
-      header('location: ../signup.php?error=invalidPass');
+      header('location: ../views/signup.php?error=invalidPass');
       exit();
     }
 
     if ($this->invalidEmail() == false) {
-      header('location: ../signup.php?error=invalidEmail');
+      header('location: ../views/signup.php?error=invalidEmail');
       exit();
     }
 
     if ($this->userTaken() == false) {
-      header('location: ../signup.php?error=userTaken');
+      header('location: ../views/signup.php?error=userTaken');
       exit();
     }
 

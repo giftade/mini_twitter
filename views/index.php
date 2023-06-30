@@ -1,10 +1,13 @@
 <?php
-
 session_start();
+
 if (!isset($_SESSION['username'])) {
   header('Location: login.php');
 exit(); 
 }
+include "../classes/tweetDisplay-contr.classes.php";
+
+$tweetDisplay = new TweetDisplay();
 
 ?>
 
@@ -33,7 +36,7 @@ exit();
       <a href="logout.php" class="flex justify-center w-full rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" style="font-size: 20px; width:10%;">Log Out</a>
     </div>
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="space-y-6 flex flex-col sm:flex-row" action="../includes/tweets.inc.php" method="POST">
+      <form class="space-y-6 flex flex-col sm:flex-row" action="<?php echo htmlspecialchars("../includes/tweets.inc.php")  ?>" method="POST">
         <div class="flex-grow">
           <input id="tweet" name="tweet" placeholder="What do you think!?" type="text" autocomplete="tweet" required class=" block outline-none w-full  py-1.5 px-3 text-center bg-transparent placeholder-gray-400 border-b-2 border-b-gray-300 focus:border-b-indigo-600 text-white" style="font-size: 20px; background-color: rgba(255, 255, 255, 0);">
         </div>
@@ -45,19 +48,13 @@ exit();
 
 
   </div>
-  <div class="mt-10 sm:mx-auto text-white sm:w-full sm:max-w-sm border-2 border-grey-500 p-5">
-    <div class="flex space-x-4">
-      <img src="images/btc.jpg" alt="Avatar" class="w-12 h-12 rounded-full">
-      <div>
-        <h4 class="font-bold">John Doe</h4>
-        <p class="text-gray-600">@johndoe</p>
-      </div>
-    </div>
-    <div class="mt-4">
-      <p class="text-lg">This is an example tweet using Tailwind CSS!</p>
-    </div>
 
-  </div>
+  <?php
+  
+    $tweetDisplay->displayTweet();
+  
+   ?>
+  
 
 </body>
 

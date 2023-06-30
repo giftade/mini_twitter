@@ -3,8 +3,8 @@
 session_start();
 if (!isset($_SESSION['username'])) {
   header('Location: login.php');
+exit(); 
 }
-
 
 ?>
 
@@ -33,7 +33,7 @@ if (!isset($_SESSION['username'])) {
       <a href="logout.php" class="flex justify-center w-full rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" style="font-size: 20px; width:10%;">Log Out</a>
     </div>
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="space-y-6 flex flex-col sm:flex-row" action="../mini_twitter/includes/login.inc.php" method="POST">
+      <form class="space-y-6 flex flex-col sm:flex-row" action="../includes/tweets.inc.php" method="POST">
         <div class="flex-grow">
           <input id="tweet" name="tweet" placeholder="What do you think!?" type="text" autocomplete="tweet" required class=" block outline-none w-full  py-1.5 px-3 text-center bg-transparent placeholder-gray-400 border-b-2 border-b-gray-300 focus:border-b-indigo-600 text-white" style="font-size: 20px; background-color: rgba(255, 255, 255, 0);">
         </div>

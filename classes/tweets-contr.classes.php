@@ -15,8 +15,22 @@ class TweetsContr extends Tweets
     $this->timestamp = $timestamp;
   }
 
+  public function tweet(){
+    if($this->emptyInput() === false){
+      header('location: ../views/index.php?error=emptyInput');
+      exit();
+    }
+    $this->setTweet($this->tweetContent, $this->userId, $this->username, $this->timestamp);
+  }
+
   private function emptyInput(){
-    
+    $result = '';
+    if(empty($this->tweetContent)){
+        $result = false;
+    }else{
+      $result = true;
+    }
+    return $result;
   }
 
 }

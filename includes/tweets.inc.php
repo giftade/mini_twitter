@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
   filter_input(INPUT_POST, 'tweet', FILTER_SANITIZE_SPECIAL_CHARS);
   $userId = $_SESSION['user_id'];
   $username = $_SESSION['username'];
-  $timestamp = date('Y-m-d');
+  $timestamp =date('d-m-Y H:i') ;
 }
 
 include "../classes/dbh.classes.php";

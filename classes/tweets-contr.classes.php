@@ -21,8 +21,9 @@ class TweetsContr extends Tweets
       exit();
     }
     $this->setTweet($this->tweetContent, $this->userId, $this->username, $this->timestamp);
+    
   }
-
+  
   private function emptyInput(){
     $result = '';
     if(empty($this->tweetContent)){

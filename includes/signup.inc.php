@@ -5,10 +5,12 @@ $email = "";
 $password = "";
  
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  //assign user input to variables
   $username = $_POST['username'];
   $email = $_POST['email'];
   $password = $_POST['password'];
 
+  //store users inputs in a session 
     $_SESSION['username'] = $username;
     $_SESSION['email'] = $email;
   
@@ -21,10 +23,11 @@ $signup->signupUser();
     $username =  $_POST['username'];
   }
   
-//header('location: ../views/login.php?error=none');
+header('location: ../views/login.php?error=none');
  
   }
 
+  //display error
 $error = '';
   if (isset($_GET['error']) &&  $_GET['error'] == "invalidUsername") {
     $error =  "Username is Invalid";

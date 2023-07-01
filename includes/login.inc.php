@@ -16,6 +16,8 @@ $login->loginUser();
 
 header('location: ../views/index.php?error=none');
 }
+
+//display error message
 $error = '';
 if (isset($_GET['error']) &&  $_GET['error'] == "wrongpassword") {
   $error =  "Password is Incorrect";

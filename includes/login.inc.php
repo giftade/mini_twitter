@@ -8,6 +8,7 @@ if(isset($_POST['submit'])){
 include "../classes/dbh.classes.php";
 include "../classes/login.classes.php";
 include "../classes/login-contr.classes.php";
+include "../classes/tweetDisplay-contr.classes.php";
 $login = new LoginContr($username,$password);
 $login->loginUser();
 

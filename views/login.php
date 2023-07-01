@@ -1,3 +1,12 @@
+<?php
+$error = '';
+if (isset($_GET['error']) &&  $_GET['error'] == "wrongpassword") {
+  $error =  "Password is Incorrect";
+} else if (isset($_GET['error']) && $_GET['error'] == "usernotfound") {
+  $error = "User does not exist";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +46,7 @@
             <input id="password" name="password" type="password" required class="block outline-none w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
+        <p class='text-red-500'><?php echo $error; ?></p>
 
         <div class="text-sm">
           <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>

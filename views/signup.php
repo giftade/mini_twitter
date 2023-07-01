@@ -1,4 +1,7 @@
+<?php
 
+include_once "../includes/signup.inc.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,14 +28,14 @@
         <div>
           <label for="username" class="block text-sm font-medium leading-6 text-white">Username</label>
           <div class="mt-2">
-            <input id="username" name="username" type="username" autocomplete="username" required class="block outline-none w-full rounded-md border-0 py-1.5   shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input id="username" value="<?php echo $username ?>" name="username" type="username" autocomplete="username" required class="block outline-none w-full rounded-md border-0 py-1.5   shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
 
         <div>
           <label for="email" class="block text-sm font-medium leading-6 text-white">Email</label>
           <div class="mt-2">
-            <input id="email" name="email" type="email" autocomplete="email" required class="block  outline-none w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input id="email" value="<?php echo $email?>" name="email" type="email" autocomplete="email" required class="block  outline-none w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
 
@@ -45,7 +48,7 @@
             <input id="password" name="password" type="password" required class="block outline-none w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
-
+        <p class='text-red-500'><?php echo $error; ?></p>
         <div>
           <button type="submit" name="submit" class="flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign Up</button>
         </div>

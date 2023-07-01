@@ -1,7 +1,18 @@
 <?php
-
 include_once "../includes/signup.inc.php";
+
+    //Preserves users input when form is submitted and there's an error;
+    if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+        unset($_SESSION['username']); 
+    }
+if (isset($_SESSION['email'])) {
+  $email = $_SESSION['email'];
+  unset($_SESSION['email']);
+}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,14 +39,14 @@ include_once "../includes/signup.inc.php";
         <div>
           <label for="username" class="block text-sm font-medium leading-6 text-white">Username</label>
           <div class="mt-2">
-            <input id="username" value="<?php echo $username ?>" name="username" type="username" autocomplete="username" required class="block outline-none w-full rounded-md border-0 py-1.5   shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input id="username" value="<?php echo isset($username) ? $username : ''; ?>" name="username" type="text" autocomplete="username" required class="block outline-none w-full rounded-md border-0 py-1.5   shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
 
         <div>
           <label for="email" class="block text-sm font-medium leading-6 text-white">Email</label>
           <div class="mt-2">
-            <input id="email" value="<?php echo $email?>" name="email" type="email" autocomplete="email" required class="block  outline-none w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input id="email" value="<?php echo isset($email) ? $email : ''; ?>" name="email" type="email" autocomplete="email" required class="block  outline-none w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
 
@@ -59,7 +70,8 @@ include_once "../includes/signup.inc.php";
         <a href="login.php" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign In</a>
       </p>
     </div>
-  </div>
+</div>
+
 </body>
 
 </html>

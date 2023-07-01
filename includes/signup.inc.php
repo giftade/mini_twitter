@@ -36,6 +36,16 @@ $error = '';
     $error = "Username or Email is already taken";
   }
 
+  //Preserves users input when form is submitted and there's an error;
+  if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+    unset($_SESSION['username']);
+  }
+  if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+    unset($_SESSION['email']);
+  }
+
 
   ?>
    

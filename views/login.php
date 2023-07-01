@@ -1,10 +1,5 @@
 <?php
-$error = '';
-if (isset($_GET['error']) &&  $_GET['error'] == "wrongpassword") {
-  $error =  "Password is Incorrect";
-} else if (isset($_GET['error']) && $_GET['error'] == "usernotfound") {
-  $error = "User does not exist";
-}
+include_once "../includes/login.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +26,7 @@ if (isset($_GET['error']) &&  $_GET['error'] == "wrongpassword") {
         <div>
           <label for="username" class="block text-sm font-medium leading-6 text-white">Username or Email</label>
           <div class="mt-2">
-            <input id="username" name="username" type="username" autocomplete="username" required class="block outline-none w-full rounded-md border-0 py-1.5   shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input id="username" value="<?php echo isset($username) ? $username : ''; ?>" name="username" type="username" autocomplete="username" required class="block outline-none w-full rounded-md border-0 py-1.5   shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
 
